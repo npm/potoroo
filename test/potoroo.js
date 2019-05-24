@@ -15,8 +15,8 @@ describe('potoroo', function () {
     assert.isTrue(Password(password, username).err.message.length > 0)
   })
 
-  it('returns false and an error if the password is less than seven characters', function () {
-    const password = '2short'
+  it('returns false and an error if the password is less than ten characters', function () {
+    const password = '2short19'
     const username = 'shorty'
     assert.isFalse(Password(password, username).isSafe)
     assert.property(Password(password, username), 'err')
@@ -36,7 +36,7 @@ describe('potoroo', function () {
   })
 
   it('returns false and an error  if the password exists in the rockyou password list', function () {
-    const password = '123456789'
+    const password = '1234567890'
     const username = 'rockyou'
     assert.isFalse(Password(password, username).isSafe)
     assert.property(Password(password, username), 'err')
