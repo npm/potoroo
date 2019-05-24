@@ -7,8 +7,8 @@ function checkPassword (pw, username) {
   if (pw === username) {
     const msg = 'The provided password matches the user name. Please pick a different password.'
     return { isSafe: false, err: new UnsafePassword.Username(msg) }
-  } else if (pw.length < 7) {
-    const msg = 'The provided password is too short. Please pick a password longer than 7 characters.'
+  } else if (pw.length < 10) {
+    const msg = 'The provided password is too short. Please pick a password longer than 10 characters.'
     return { isSafe: false, err: new UnsafePassword.Short(msg) }
   } else if (usernameOverrepresented(pw, username)) {
     const msg = 'The provided password is not significantly different than the user name. Please pick a different password.'
