@@ -8,9 +8,6 @@
     "test": "mocha ./test/*.js",
     "posttest": "npm run lint"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/ashleygwilliams"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
